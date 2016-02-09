@@ -12,15 +12,15 @@ class TestSuite(unittest.TestCase):
 
     def test_three(self):
         app = FizzBuzz()
-        self.failIf(app.calc(3) == "Fizz")
+        self.failIf(app.calc(3) != "Fizz")
 
     def test_five(self):
         app = FizzBuzz()
-        self.failIf(app.calc(5) == "Buzz")
+        self.failIf(app.calc(5) != "Buzz")
 
     def test_15(self):
         app = FizzBuzz()
-        self.failIf(app.calc(15) == "FizzBuzz")     
+        self.failIf(app.calc(15) != "FizzBuzz")     
 
 
     def test_run(self):
