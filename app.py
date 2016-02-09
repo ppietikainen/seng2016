@@ -17,12 +17,25 @@ class FizzBuzz():
 
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
-        for i in range(1, end):
+        for i in range(1, end + 1):
             print >> out, self.calc(i)
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        return i
+        if i == 1:
+            return i
+        elif i % 3 == 0 and i % 5 == 0:
+            return "FizzBuzz"
+        elif i % 3 == 0:
+            return "Fizz"
+        elif i % 5 == 0:
+            return "Buzz"
+        else:
+            for x in range(2, i):
+                if i % x == 0:
+                    return i
+            return "%d is a prime" % i
+
 
 if __name__ == "__main__":
     app = FizzBuzz()
