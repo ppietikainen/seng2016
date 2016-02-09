@@ -8,7 +8,7 @@ class TestSuite(unittest.TestCase):
 
     def test_one(self):
         app = FizzBuzz()
-        self.failIf(app.calc(1) != "1 is a prime")
+        self.failIf(app.calc(1) != 1)
 
     def test_three(self):
         app = FizzBuzz()
