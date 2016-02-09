@@ -24,12 +24,16 @@ class FizzBuzz():
     def calc(self, i):
 		if i % 3 == 0 and i % 5 == 0:
 			return "FizzBuzz"
-		if i % 3 == 0: 
+		elif i % 3 == 0: 
 			return "Fizz"
-		if i % 5 == 0: 
+		elif i % 5 == 0: 
 			return "Buzz"
 		else: 
-			return i
+			for x in range(3, i + 2):
+				if i % x == 0:
+					return i
+				else:
+					return "%d is a prime" % i
 
 if __name__ == "__main__":
     app = FizzBuzz()
