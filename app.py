@@ -15,14 +15,24 @@ class FizzBuzz():
     def __init__(self):
         pass
 
-    # Run from 1 to "end". Maybe. Test fails for some reason
+    def fizzBuzzTester(self, number):
+        if (number % 3 == 0) and (number % 5 == 0):
+            toPrint = 'FizzBuzz'
+        elif (number % 3 == 0):
+            toPrint = 'Fizz'
+        elif (number % 5 == 0):
+            toPrint = 'Buzz'
+        else:
+            toPrint = number
+        return toPrint
+		
     def run(self, end, out=sys.stdout):
         for i in range(1, end):
+			
             print >> out, self.calc(i)
 
-    # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        return i
+        return self.fizzBuzzTester(i)
 
 if __name__ == "__main__":
     app = FizzBuzz()
