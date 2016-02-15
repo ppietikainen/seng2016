@@ -16,8 +16,10 @@ class FizzBuzz():
         pass
 
     def fizzBuzzTester(self, number):
-        #test if fizz or buzz
-        if (number % 3 == 0) and (number % 5 == 0):
+        #test if fizz or buzz or prime
+        if self.primeTester(number) == True:
+            toPrint = '{} is a prime'.format(number)
+        elif (number % 3 == 0) and (number % 5 == 0):
             toPrint = 'FizzBuzz'
         elif (number % 3 == 0):
             toPrint = 'Fizz'
@@ -26,6 +28,9 @@ class FizzBuzz():
         else:
             toPrint = number
         return toPrint
+
+    def primeTester(self, number):
+        return all(number % i for i in xrange(2, number))
 		
     def run(self, end, out=sys.stdout):
         for i in range(1, end):
