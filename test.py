@@ -8,9 +8,14 @@ class TestSuite(unittest.TestCase):
 
     def test_one(self):
         app = FizzBuzz()
-
-
         self.failIf(app.calc(1) != 1)
+
+    def test_known_primes(self):
+        app = FizzBuzz()
+        # A list of known prime numbers
+        primes = [3, 5, 7, 11, 13, 17, 19, 23, 27]
+        for i in primes:
+            self.failIf(app.calc(i) != str(i) + "is a prime")
 
     def test_run(self):
         output = StringIO()
