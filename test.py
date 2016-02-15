@@ -6,7 +6,7 @@ from app import FizzBuzz
 
 class TestSuite(unittest.TestCase):
 
-    def test_one(self):
+    def test_three(self):
         app = FizzBuzz()
         self.failIf(app.calc(3) != "3 is a prime")
 
@@ -14,20 +14,20 @@ class TestSuite(unittest.TestCase):
         # Test program output with known prime numbers as arguments
         app = FizzBuzz()
         # A list of known prime numbers
-        primes = [3, 5, 7, 11, 13, 17, 19, 23, 27]
+        primes = [5, 7, 11, 13, 17, 19, 23, 29]
         for i in primes:
             self.failIf(app.calc(i) != str(i) + " is a prime")
-
+            
     def test_fizz(self):
         app = FizzBuzz()
-        test_fizz = [3, 6, 9, 12, 18, 21, 24]
+        test_fizz = [6, 9, 12, 18, 21, 24]
         # Run test
         for value in test_fizz:
             self.failIf(app.calc(value) != "Fizz")
 
     def test_buzz(self):
         app = FizzBuzz()
-        test_buzz = [5, 10, 20, 35, 40, 50, 55]
+        test_buzz = [10, 20, 35, 40, 50, 55]
         for value in test_buzz:
             self.failIf(app.calc(value) != "Buzz")
 
@@ -44,7 +44,8 @@ class TestSuite(unittest.TestCase):
         app.run(100, output)
         # The correct amount of fizz
         valid_fizz_amount = []
-        for i in range(1, 100):
+        # Range starts 
+        for i in range(6, 100):
             if i % 3 == 0 and i % 5 != 0:
                 valid_fizz_amount.append(i)
         test_fizz_amount = output.getvalue().splitlines().count("Fizz")
