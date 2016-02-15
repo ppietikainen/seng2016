@@ -27,7 +27,7 @@ class FizzBuzz():
 				if (i % j) == 0:
 					break
 			else:
-				return ("%s is a prime " % i)
+				return "%s is a prime" % i
 		if (i% 3 == 0) and (i % 5 == 0):
 			return ("FizzBuzz")
 		elif i % 3 == 0:
