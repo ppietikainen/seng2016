@@ -24,7 +24,7 @@ class TestSuite(unittest.TestCase):
     
     def test_prime(self):
         app = FizzBuzz()
-        primes = [2, 7, 13, 17, 19, 23, 29, 31, 37]
+        primes = [2, 7, 11, 13, 17, 19, 23, 29, 31, 37]
         for p in primes:
             self.failIf('prime' not in app.calc(p) )
 
