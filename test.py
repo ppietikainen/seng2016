@@ -24,7 +24,7 @@ class TestSuite(unittest.TestCase):
         app.run(100, output)
         
         # Test if there are 100 lines in output
-        self.failIf(len(output.getvalue().splitlines()) == 100)
+        self.failIf(len(output.getvalue().splitlines()) != 100)
 
 def main():
     unittest.main()
