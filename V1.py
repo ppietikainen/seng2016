@@ -19,23 +19,17 @@ class FizzBuzz():
     def run(self, end, out=sys.stdout):
         for i in range(1, end+1):
             print >> out, self.calc(i)
-            
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        for a in range(1, i):
-            if i % a == 0 and a != 1:
-                break
-            if a == i-1:
-                return "%d is a prime" % i
         if i % 3 == 0 and i % 5 == 0:
-            return "FizzBuzz"
+            print "FizzBuzz"
         elif i % 3 == 0:
-            return "Fizz"
+            print "Fizz"
         elif i % 5 == 0:
-            return "Buzz"
+            print "Buzz"
         else:
-            return i
+            print i
         
     
 
