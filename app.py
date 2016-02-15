@@ -22,7 +22,10 @@ class FizzBuzz():
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        return i
+        # Check if number is prime
+        if i <= 2:
+            return i
+ 
 
 if __name__ == "__main__":
     app = FizzBuzz()
