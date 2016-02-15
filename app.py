@@ -16,6 +16,7 @@ class FizzBuzz():
         pass
 
     def fizzBuzzTester(self, number):
+        #test if fizz or buzz
         if (number % 3 == 0) and (number % 5 == 0):
             toPrint = 'FizzBuzz'
         elif (number % 3 == 0):
