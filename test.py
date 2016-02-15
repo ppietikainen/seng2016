@@ -29,6 +29,19 @@ class TestSuite(unittest.TestCase):
         for value in test_fizzbuzz:
             self.failIf(app.calc(value) != "FizzBuzz")
 
+    def test_amount_of_fizz(self):
+        # Check if program outputs the correct amount of "Fizz" with a test argument 100
+        app = FizzBuzz()
+        output = StringIO()
+        app.run(100, output)
+        # The correct amount of fizz
+        valid_fizz_amount = []
+        for i in range(1, 100):
+            if i % 3 == 0 and i % 5 != 0:
+                valid_fizz_amount.append(i)
+        test_fizz_amount = output.getvalue().splitlines().count("Fizz")
+        self.failIf(test_fizz_amount != len(valid_fizz_amount))
+
     def test_run(self):
         output = StringIO()
 
