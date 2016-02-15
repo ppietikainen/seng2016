@@ -17,8 +17,9 @@ class TestSuite(unittest.TestCase):
 
         app = FizzBuzz()
         app.run(100, output)
-
-        self.failIf(len(output.getvalue().splitlines()) != 100)
+        
+        # Test if there are 100 lines in output
+        self.failIf(len(output.getvalue().splitlines()) == 100)
 
 def main():
     unittest.main()
