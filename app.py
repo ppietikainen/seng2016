@@ -25,8 +25,9 @@ class FizzBuzz():
         # Check if number is prime
         if i <= 2:
             return i
- 
-        if i % 3 == 0 and i % 5 == 0:
+        elif all(i % n for n in xrange(2, i)):
+            return str(i) + " is a prime"
+        elif i % 3 == 0 and i % 5 == 0:
             return "FizzBuzz"
         elif i % 3 == 0:
             return "Fizz"
