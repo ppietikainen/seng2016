@@ -12,18 +12,31 @@ import sys
 #            Take one argument,  and count up to it
 
 class FizzBuzz():
-    def __init__(self):
-        pass
+	def __init__(self):
+		pass
 
-    # Run from 1 to "end". Maybe. Test fails for some reason
-    def run(self, end, out=sys.stdout):
-        for i in range(1, end):
-            print >> out, self.calc(i)
+	# Run from 1 to "end". Maybe. Test fails for some reason
+	def run(self, end, out=sys.stdout):
+		for i in range(1, end+1):
+			print >> out, self.calc(i)
 
-    # Seems to give correct values. Tested with 1 and 2.
-    def calc(self, i):
-        return i
+	# Seems to give correct values. Tested with 1 and 2.
+	def calc(self, i):
+		if (i > 1):
+			for j in range (2,i):
+				if (i % j) == 0:
+					break
+			else:
+				return "%s is a prime" % i
+		if (i% 3 == 0) and (i % 5 == 0):
+			return ("FizzBuzz")
+		elif i % 3 == 0:
+			return ("Fizz")
+		elif i % 5 == 0:
+			return ("Buzz")
+		return i
+
 
 if __name__ == "__main__":
-    app = FizzBuzz()
-    app.run(100)
+	app = FizzBuzz()
+	app.run(100)
