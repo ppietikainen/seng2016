@@ -23,6 +23,12 @@ class TestSuite(unittest.TestCase):
         for value in test_buzz:
             self.failIf(app.calc(value) != "Buzz")
 
+    def test_fizzbuzz(self):
+        app = FizzBuzz()
+        test_fizzbuzz = [15, 30, 45, 60, 75, 90]
+        for value in test_fizzbuzz:
+            self.failIf(app.calc(value) != "FizzBuzz")
+
     def test_run(self):
         output = StringIO()
 
