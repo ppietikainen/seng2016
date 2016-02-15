@@ -30,10 +30,13 @@ class FizzBuzz():
         return toPrint
 
     def primeTester(self, number):
-        return all(number % i for i in xrange(2, number))
+        if number < 2:
+            return False
+        else:
+            return all(number % i for i in xrange(2, number))
 		
     def run(self, end, out=sys.stdout):
-        for i in range(1, end):
+        for i in range(1, end+1):
 			
             print >> out, self.calc(i)
 
